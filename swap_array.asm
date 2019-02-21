@@ -207,7 +207,7 @@ loop:
         sw $t7, 0($t6)
         sw $t2, 0($t5)
 
-        addi $t0, $t0, 1
+        addiu $t0, $t0, 1
         addi $t1, $t1, -1
         
         j loop

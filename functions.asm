@@ -116,7 +116,7 @@ Exit:
 
 PrintReverse:
     #TODO: write your code here, $a0 stores the address of the array, $a1 stores the length of the array
-    beq $s1, $zero, done
+    beq $a1, $zero, done
 
     addi $sp, $sp, -12
     sw $s0, 8($sp)

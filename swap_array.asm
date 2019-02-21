@@ -182,7 +182,37 @@ doSwap:
 
 
         # TODO: fill in the code
+        li $t0, 0
+        li $t1, 8
 
+        
+
+loop:
+        la $t3,	myArrayLength
+        lw $t2,	0($t3)	
+
+        li $t3, 4
+
+        beq $t0, $t3, done
+
+        la $t3, myArray
+
+        sll $t4, $t0, 2
+        add $t5, $t4, $t3
+        lw $t7, 0($t5)
+        #t7=array[x]
+
+        sll $t4, $t1, 2
+        add $t6, $t4, $t3
+
+        move $t5, $t6
+        move $t6, $t7
+
+        addi $t0, $t0, 1
+        addi $t1, $t1, -1
+        jump loop
+
+done:
         
         # do not remove this line
         jr $ra

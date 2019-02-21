@@ -185,15 +185,15 @@ doSwap:
         li $t0, 0
         li $t1, 8
 
+        la $t3, myArray
+
         
 
 loop:
 
-        li $t3, 4
+        li $t2, 4
 
-        beq $t0, $t3, done
-
-        la $t3, myArray
+        beq $t0, $t2, done
 
         sll $t4, $t0, 2
         add $t5, $t4, $t3
@@ -202,9 +202,10 @@ loop:
 
         sll $t4, $t1, 2
         add $t6, $t4, $t3
+        lw $t2, 0($t6)
 
-        move $t5, $t6
-        move $t6, $t7
+        sw $t7, 0($t5)
+        sw $t2, 0($t6)
 
         addi $t0, $t0, 1
         addi $t1, $t1, -1

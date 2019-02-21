@@ -127,11 +127,10 @@ IterativeMax:
     move $s0, $a0
     move $s1, $a1
 
-    la $t0, myArray
-    lw $s2, 0($t0)
-
+    lw $s2, 0($s0)
     li $s3, 0
 
+    
 loop:
     slt $t0, $s3, $s1
     beq $t0, $zero, done

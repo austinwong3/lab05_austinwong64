@@ -188,8 +188,6 @@ doSwap:
         
 
 loop:
-        la $t3,	myArrayLength
-        lw $t2,	0($t3)	
 
         li $t3, 4
 
@@ -210,7 +208,8 @@ loop:
 
         addi $t0, $t0, 1
         addi $t1, $t1, -1
-        jump loop
+        
+        j loop
 
 done:
         
